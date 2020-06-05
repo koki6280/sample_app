@@ -1,12 +1,16 @@
 class TodolistsController < ApplicationController
-  def new
+    def new
   	@list = List.new
-  end
+    end
 
-  def create
+    def create
          list = List.new(list_params)
          list.save
          redirect_to '/top'
+    end
+
+    def index
+    	@lists = List.all
     end
 
 
